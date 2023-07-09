@@ -1,0 +1,68 @@
+@import '../../styles/normalize.css';
+@import '../../styles/variables.scss';
+
+.home-container {
+	width: 100%;
+	height: calc(100vh - 136px);
+	padding: 130px 165px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	color: $medium;
+
+	&__text {
+		width: 444px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 24px;
+	}
+
+	&__text-1,
+	&__text-2 {
+		text-transform: uppercase;
+	}
+
+	&__text-1 {
+		font: $heading-5;
+		letter-spacing: 2.72px;
+	}
+
+	&__text-2 {
+		font: $heading-1;
+		color: $light;
+	}
+
+	&__text-3 {
+		font: $body-text;
+		line-height: 32px;
+	}
+
+	&__button {
+		width: 274px;
+		height: 274px;
+		border: none;
+		background-color: $light;
+		border-radius: 50%;
+		text-transform: uppercase;
+		font: $heading-4;
+		cursor: pointer;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: calc((274px / 2) - (450px / 2));
+			left: calc((274px / 2) - (450px / 2));
+			width: 450px;
+			height: 450px;
+			border-radius: 50%;
+			background-color: rgba($light, 0.1036);
+			transform: scale(0);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		&:hover::before {
+			transform: scale(1);
+		}
+	}
+}
