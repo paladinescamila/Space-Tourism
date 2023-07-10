@@ -1,9 +1,7 @@
 @import '../../styles/normalize.css';
 @import '../../styles/variables.scss';
 
-.home-container {
-	width: 100%;
-	height: calc(100vh - 136px);
+.home {
 	padding: 130px 165px;
 	display: flex;
 	justify-content: space-between;
@@ -18,13 +16,14 @@
 	}
 
 	&__text-1,
-	&__text-2 {
+	&__text-2,
+	&__button {
 		text-transform: uppercase;
 	}
 
 	&__text-1 {
 		font: $heading-5;
-		letter-spacing: 2.72px;
+		letter-spacing: 4.72px;
 	}
 
 	&__text-2 {
@@ -43,8 +42,8 @@
 		border: none;
 		background-color: $light;
 		border-radius: 50%;
-		text-transform: uppercase;
 		font: $heading-4;
+		letter-spacing: 2px;
 		cursor: pointer;
 		position: relative;
 

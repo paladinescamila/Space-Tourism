@@ -8,10 +8,18 @@ body,
 	width: 100%;
 	height: 100%;
 	background-color: #000;
-	background-image: url('../assets/background-home-desktop.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: background-image 0.2 ease-in-out;
 }
 
-.header-container {
+@each $page in home, destination, crew, technology {
+	.#{$page}-bg {
+		background-image: url('../assets/background-#{$page}-desktop.jpg');
+	}
+}
+
+.header {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -30,10 +38,12 @@ body,
 		column-gap: 50px;
 		width: 830px;
 		height: 96px;
+		position: relative;
 		background-color: rgba($light, 0.04);
-		// filter: blur(81.55);
+		backdrop-filter: blur(81.55px);
 
-		a {
+		&--selected,
+		&--unselected {
 			display: flex;
 			column-gap: 11px;
 			color: $light;
@@ -41,12 +51,32 @@ body,
 			text-transform: uppercase;
 			text-decoration: none;
 			padding-bottom: 35px;
-			border-bottom: 3px solid $light;
+			border-bottom: 3px solid transparent;
 			transition: border-bottom-color 0.3s ease-in-out;
+			letter-spacing: 2.7px;
 
 			p:first-of-type {
 				font-weight: 900;
 			}
 		}
+
+		&--selected {
+			border-bottom-color: $light;
+		}
+
+		&::after {
+			content: '';
+			width: calc(100vw - 800px - 55px - 48px - 65px);
+			height: 1px;
+			background-color: rgba($light, 0.2515);
+			position: absolute;
+			top: calc(50% - 1px / 2);
+			right: 800px;
+		}
 	}
+}
+
+.page {
+	width: 100%;
+	height: calc(100vh - 136px);
 }
