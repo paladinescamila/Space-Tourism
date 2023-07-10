@@ -79,4 +79,23 @@ body,
 .page {
 	width: 100%;
 	height: calc(100vh - 136px);
+
+	&__header {
+		font: $heading-5;
+		letter-spacing: 4.72px;
+		text-transform: uppercase;
+		color: $light;
+		display: flex;
+		column-gap: 28px;
+		margin-bottom: 64px;
+
+		h5:first-of-type {
+			font-weight: bold;
+			opacity: 0.25;
+		}
+
+		h5:last-of-type {
+			font-weight: normal;
+		}
+	}
 }

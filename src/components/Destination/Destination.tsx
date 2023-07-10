@@ -8,11 +8,13 @@ import Mars from './assets/mars.png';
 import Europa from './assets/europa.png';
 import Titan from './assets/titan.png';
 
+type DestinationType = 'moon' | 'mars' | 'europa' | 'titan';
+
 export default function Destination() {
 	const {destination} = info;
-	const [selected, setSelected] = useState<'moon' | 'mars' | 'europa' | 'titan'>('moon');
+	const [selected, setSelected] = useState<DestinationType>('moon');
 
-	const images = {
+	const photos = {
 		moon: Moon,
 		mars: Mars,
 		europa: Europa,
@@ -21,12 +23,16 @@ export default function Destination() {
 
 	return (
 		<div className='destination page'>
-			<div className='destination__header'>
+			<div className='page__header'>
 				<h5>01</h5>
 				<h5>Pick your destination</h5>
 			</div>
 			<div className='destination__subpage'>
-				<img className={`destination__subpage__img--${selected}`} src={images[selected]} />
+				<img
+					className={`destination__subpage__img--${selected}`}
+					src={photos[selected]}
+					alt={selected.toLocaleUpperCase()}
+				/>
 				<ul className='destination__subpage__nav'>
 					{Object.keys(destination).map((key) => (
 						<li

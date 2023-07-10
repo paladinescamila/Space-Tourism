@@ -1,0 +1,73 @@
+@import '../../styles/normalize.css';
+@import '../../styles/variables.scss';
+
+.crew {
+	display: flex;
+	flex-direction: column;
+	padding: 76px 130px 94px 165px;
+	position: relative;
+
+	&__subpage {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+
+		&__img {
+			position: absolute;
+			bottom: 0;
+			right: 130px;
+		}
+
+		&__info {
+			&__role,
+			&__name {
+				text-transform: uppercase;
+			}
+			&__role {
+				font: $heading-4;
+				color: $medium;
+			}
+
+			&__name {
+				font: $heading-3;
+				color: $light;
+				margin: 15px 0 27px 0;
+			}
+
+			&__description {
+				font: $body-text;
+				color: $medium;
+				width: 444px;
+			}
+		}
+
+		&__nav {
+			display: flex;
+			column-gap: 24px;
+
+			&__item,
+			&__item--selected {
+				width: 15px;
+				height: 15px;
+				background-color: $light;
+				opacity: 0.1774;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 0.3;
+				}
+			}
+
+			&__item--selected {
+				opacity: 1;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

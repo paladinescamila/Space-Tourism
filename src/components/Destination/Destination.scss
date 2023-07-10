@@ -13,29 +13,10 @@ $rotation-times: (
 	flex-direction: column;
 	padding: 76px 163px 112px 163px;
 
-	&__header,
 	&__subpage__nav,
 	&__subpage__info__title,
 	&__subpage__info__other {
 		text-transform: uppercase;
-	}
-
-	&__header {
-		font: $heading-5;
-		letter-spacing: 4.72px;
-		color: $light;
-		display: flex;
-		column-gap: 28px;
-		margin-bottom: 64px;
-
-		h5:first-of-type {
-			font-weight: bold;
-			opacity: 0.25;
-		}
-
-		h5:last-of-type {
-			font-weight: normal;
-		}
 	}
 
 	&__subpage {
