@@ -352,6 +352,8 @@ template {
 
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 h1,
@@ -370,4 +372,8 @@ a {
 
 ul {
 	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }

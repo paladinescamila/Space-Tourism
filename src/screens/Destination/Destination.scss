@@ -1,0 +1,105 @@
+@import '../../styles/normalize.css';
+@import '../../styles/variables.scss';
+
+.destination {
+	padding: 76px 163px 112px 163px;
+
+	&__content {
+		display: grid;
+		grid-template-columns: 1fr 30vw;
+		grid-template-rows: 34px 1fr;
+		grid-gap: 37px 157px;
+		grid-template-areas:
+			'photo nav'
+			'photo info';
+
+		&__photo {
+			grid-area: photo;
+			width: 445px;
+			height: 445px;
+			animation: rotate-planet 30s linear infinite;
+		}
+
+		@keyframes rotate-planet {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		&__nav {
+			display: flex;
+			column-gap: 35px;
+			grid-area: nav;
+			text-transform: uppercase;
+
+			&__item {
+				font: $nav-text;
+				letter-spacing: 2.7px;
+				color: $medium;
+				border-bottom: 3px solid transparent;
+				cursor: pointer;
+				transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+
+				&:hover {
+					border-bottom-color: rgba($light, 0.5);
+				}
+
+				&--selected {
+					color: $light;
+					border-bottom-color: $light;
+
+					&:hover {
+						border-bottom-color: $light;
+					}
+				}
+			}
+		}
+
+		&__info {
+			grid-area: info;
+
+			&__title {
+				font: $heading-2;
+				color: $light;
+				height: 115px;
+				text-transform: uppercase;
+			}
+
+			&__description {
+				font: $body-text;
+				color: $medium;
+				margin: 14px 0 54px 0;
+				height: 128px;
+			}
+
+			&__other {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				border-top: 1px solid #383b4b;
+				padding-top: 28px;
+				text-transform: uppercase;
+
+				&__distance,
+				&__travel {
+					display: flex;
+					flex-direction: column;
+					row-gap: 12px;
+
+					p:first-of-type {
+						font: $subheading-2;
+						color: $medium;
+						letter-spacing: 2.36px;
+					}
+
+					p:last-of-type {
+						font: $subheading-1;
+						color: $light;
+					}
+				}
+			}
+		}
+	}
+}

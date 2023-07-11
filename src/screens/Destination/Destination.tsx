@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-import './Destination.scss';
 import info from '../../assets/info.json';
+import './Destination.scss';
 
-// Photos
+// Assets
 import Moon from './assets/moon.png';
 import Mars from './assets/mars.png';
 import Europa from './assets/europa.png';
 import Titan from './assets/titan.png';
-
-type DestinationType = 'moon' | 'mars' | 'europa' | 'titan';
 
 export default function Destination() {
 	const {destination} = info;
@@ -27,34 +25,34 @@ export default function Destination() {
 				<h5>01</h5>
 				<h5>Pick your destination</h5>
 			</div>
-			<div className='destination__subpage'>
+			<div className='destination__content'>
 				<img
-					className={`destination__subpage__img--${selected}`}
+					className='destination__content__photo'
 					src={photos[selected]}
-					alt={selected.toLocaleUpperCase()}
+					alt={selected.toUpperCase()}
 				/>
-				<ul className='destination__subpage__nav'>
+				<ul className='destination__content__nav'>
 					{Object.keys(destination).map((key) => (
 						<li
-							className={`destination__subpage__nav__item${
-								selected === key ? '--selected' : ''
+							className={`destination__content__nav__item ${
+								selected === key ? 'destination__content__nav__item--selected' : ''
 							}`}
-							onClick={() => setSelected(key as any)}>
+							onClick={() => setSelected(key as DestinationType)}>
 							{key}
 						</li>
 					))}
 				</ul>
-				<div className='destination__subpage__info'>
-					<h2 className='destination__subpage__info__title'>{selected}</h2>
-					<p className='destination__subpage__info__description'>
+				<div className='destination__content__info'>
+					<h2 className='destination__content__info__title'>{selected}</h2>
+					<p className='destination__content__info__description'>
 						{destination[selected].description}
 					</p>
-					<div className='destination__subpage__info__other'>
-						<div className='destination__subpage__info__other__distance'>
+					<div className='destination__content__info__other'>
+						<div className='destination__content__info__other__distance'>
 							<p>Avg. distance</p>
 							<p>{destination[selected]['average-distance']}</p>
 						</div>
-						<div className='destination__subpage__info__other__travel'>
+						<div className='destination__content__info__other__travel'>
 							<p>Est. travel time</p>
 							<p>{destination[selected]['travel-time']}</p>
 						</div>

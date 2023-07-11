@@ -2,18 +2,16 @@
 @import '../../styles/variables.scss';
 
 .crew {
-	display: flex;
-	flex-direction: column;
 	padding: 76px 130px 94px 165px;
 	position: relative;
 
-	&__subpage {
+	&__content {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		height: 100%;
 
-		&__img {
+		&__photo {
 			position: absolute;
 			bottom: 0;
 			right: 130px;
@@ -24,6 +22,7 @@
 			&__name {
 				text-transform: uppercase;
 			}
+
 			&__role {
 				font: $heading-4;
 				color: $medium;
@@ -46,8 +45,7 @@
 			display: flex;
 			column-gap: 24px;
 
-			&__item,
-			&__item--selected {
+			&__item {
 				width: 15px;
 				height: 15px;
 				background-color: $light;
@@ -57,14 +55,11 @@
 				transition: opacity 0.3s ease-in-out;
 
 				&:hover {
-					opacity: 0.3;
+					opacity: 0.5001;
 				}
-			}
 
-			&__item--selected {
-				opacity: 1;
-
-				&:hover {
+				&--selected,
+				&--selected:hover {
 					opacity: 1;
 				}
 			}

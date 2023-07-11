@@ -1,7 +1,10 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import './Home.scss';
 
 export default function Home() {
+	const navigate = useNavigate();
+
 	return (
 		<div className='home page'>
 			<div className='home__text'>
@@ -13,7 +16,9 @@ export default function Home() {
 					because we’ll give you a truly out of this world experience!
 				</p>
 			</div>
-			<button className='home__button'>Explore</button>
+			<button className='home__button' onClick={() => navigate('/destination')}>
+				Explore
+			</button>
 		</div>
 	);
 }

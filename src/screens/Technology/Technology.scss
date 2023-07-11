@@ -1,0 +1,79 @@
+@import '../../styles/normalize.css';
+@import '../../styles/variables.scss';
+
+.technology {
+	color: $light;
+	padding: 76px 130px 100px 165px;
+
+	&__content {
+		display: flex;
+		gap: 80px;
+		width: 630px;
+
+		&__nav {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+
+			&__item {
+				width: 80px;
+				height: 80px;
+				background-color: transparent;
+				border: 1px solid rgba($light, 0.25);
+				color: $light;
+				border-radius: 50%;
+				cursor: pointer;
+				font: $heading-4;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+					color 0.3s ease-in-out;
+
+				&:hover {
+					border-color: $light;
+				}
+
+				&--selected,
+				&--selected:hover {
+					background-color: $light;
+					border-color: transparent;
+					color: $dark;
+				}
+			}
+		}
+
+		&__info {
+			&__subtitle {
+				font: $nav-text;
+				color: $medium;
+				text-transform: uppercase;
+				letter-spacing: 2.7px;
+				height: 19px;
+			}
+			
+			&__title {
+				font: $heading-3;
+				color: $light;
+				text-transform: uppercase;
+				height: 64px;
+				margin: 11px 0 17px 0;
+			}
+			
+			&__description {
+				font: $body-text;
+				color: $medium;
+				height: 192px;
+				line-height: 32px;
+			}
+		}
+
+		&__photo {
+			width: 515px;
+			height: 527px;
+			position: absolute;
+			right: 0;
+			bottom: 100px;
+		}
+	}
+}

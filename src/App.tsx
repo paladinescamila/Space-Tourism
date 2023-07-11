@@ -1,37 +1,42 @@
 import React from 'react';
-import {Route, Routes, Link, useLocation} from 'react-router-dom';
+import {Route, Routes, Link, useLocation, useNavigate} from 'react-router-dom';
 import './styles/App.scss';
+
+// Assets
 import Logo from './assets/logo.png';
 
 // Screens
-import Home from './components/Home/Home';
-import Destination from './components/Destination/Destination';
-import Crew from './components/Crew/Crew';
-import Technology from './components/Technology/Technology';
+import Home from './screens/Home/Home';
+import Destination from './screens/Destination/Destination';
+import Crew from './screens/Crew/Crew';
+import Technology from './screens/Technology/Technology';
 
 function App() {
 	const navigation = useLocation();
+	const navigate = useNavigate();
 	const availableRoutes = ['/destination', '/crew', '/technology'];
-
-	const selectedStyle = (route: string) => {
-		if (availableRoutes.includes(navigation.pathname)) {
-			if (navigation.pathname === route) return 'header__links--selected';
-			else return 'header__links--unselected';
-		} else {
-			if (route === '/') return 'header__links--selected';
-			else return 'header__links--unselected';
-		}
-	};
 
 	const routeToName = (route: string) => {
 		if (availableRoutes.includes(route)) return route.replace('/', '');
 		else return 'home';
 	};
 
+	const selectedStyle = (route: string) => {
+		let className = 'header__links__item';
+
+		if (availableRoutes.includes(navigation.pathname)) {
+			if (navigation.pathname === route) className += ' ' + className + '--selected';
+		} else {
+			if (route === '/') return (className += ' ' + className + '--selected');
+		}
+
+		return className;
+	};
+
 	return (
 		<div className={`App ${routeToName(navigation.pathname)}-bg`}>
 			<nav className='header'>
-				<img src={Logo} alt='logo' className='header__logo' />
+				<img src={Logo} alt='logo' className='header__logo' onClick={() => navigate('/')} />
 				<ul className='header__links'>
 					<li>
 						<Link to='/' className={selectedStyle('/')}>

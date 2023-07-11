@@ -3,7 +3,7 @@
 
 .home {
 	padding: 130px 165px;
-	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
 	color: $medium;
