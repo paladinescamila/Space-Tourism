@@ -2,11 +2,15 @@
 @import '../../styles/variables.scss';
 
 .home {
-	padding: 130px 165px;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
 	color: $medium;
+	padding: 130px 165px;
+
+	@media (max-width: 1200px) {
+		padding: 130px calc(55px * 2);
+	}
 
 	&__text {
 		width: 444px;

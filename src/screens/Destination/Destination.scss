@@ -2,13 +2,12 @@
 @import '../../styles/variables.scss';
 
 .destination {
-	padding: 76px 163px 112px 163px;
-
 	&__content {
 		display: grid;
-		grid-template-columns: 1fr 30vw;
+		justify-content: center;
+		grid-template-columns: repeat(2, 445px);
 		grid-template-rows: 34px 1fr;
-		grid-gap: 37px 157px;
+		grid-gap: 37px 11vw;
 		grid-template-areas:
 			'photo nav'
 			'photo info';

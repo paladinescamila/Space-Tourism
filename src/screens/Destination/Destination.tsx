@@ -25,7 +25,7 @@ export default function Destination() {
 				<h5>01</h5>
 				<h5>Pick your destination</h5>
 			</div>
-			<div className='destination__content'>
+			<div className='page__content destination__content'>
 				<img
 					className='destination__content__photo'
 					src={photos[selected]}
@@ -37,7 +37,8 @@ export default function Destination() {
 							className={`destination__content__nav__item ${
 								selected === key ? 'destination__content__nav__item--selected' : ''
 							}`}
-							onClick={() => setSelected(key as DestinationType)}>
+							onClick={() => setSelected(key as DestinationType)}
+							key={key}>
 							{key}
 						</li>
 					))}

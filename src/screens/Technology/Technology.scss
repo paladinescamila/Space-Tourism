@@ -2,9 +2,6 @@
 @import '../../styles/variables.scss';
 
 .technology {
-	color: $light;
-	padding: 76px 130px 100px 165px;
-
 	&__content {
 		display: flex;
 		gap: 80px;
@@ -51,7 +48,7 @@
 				letter-spacing: 2.7px;
 				height: 19px;
 			}
-			
+
 			&__title {
 				font: $heading-3;
 				color: $light;
@@ -59,7 +56,7 @@
 				height: 64px;
 				margin: 11px 0 17px 0;
 			}
-			
+
 			&__description {
 				font: $body-text;
 				color: $medium;
@@ -74,6 +71,12 @@
 			position: absolute;
 			right: 0;
 			bottom: 100px;
+
+			@media (max-width: 1330px) {
+				transform: scale(0.7);
+				transform-origin: right;
+				bottom: 50px;
+			}
 		}
 	}
 }

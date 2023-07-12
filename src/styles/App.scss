@@ -21,7 +21,7 @@ body,
 	}
 }
 
-@media (min-width: $mobile) and (max-width: $tablet) {
+@media (min-width: $tablet) and (max-width: $desktop) {
 	@each $page in home, destination, crew, technology {
 		.#{$page}-bg {
 			background-image: url('../assets/background-#{$page}-tablet.jpg');
@@ -29,7 +29,7 @@ body,
 	}
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $desktop) {
 	@each $page in home, destination, crew, technology {
 		.#{$page}-bg {
 			background-image: url('../assets/background-#{$page}-desktop.jpg');
@@ -52,9 +52,10 @@ body,
 
 	&__links {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: flex-end;
-		column-gap: 50px;
+		padding-right: 165px;
+		column-gap: 48px;
 		width: 830px;
 		height: 96px;
 		position: relative;
@@ -74,7 +75,7 @@ body,
 			letter-spacing: 2.7px;
 
 			p:first-of-type {
-				font-weight: 900;
+				font-weight: bold;
 			}
 
 			&:hover {
@@ -112,7 +113,11 @@ body,
 		color: $light;
 		display: flex;
 		column-gap: 28px;
-		margin-bottom: 64px;
+		margin: 76px 0 0 11vw;
+
+		@media (max-width: 1330px) {
+			margin: 76px 0 0 55px;
+		}
 
 		h5:first-of-type {
 			font-weight: bold;
@@ -121,6 +126,14 @@ body,
 
 		h5:last-of-type {
 			font-weight: normal;
+		}
+	}
+
+	&__content {
+		margin: auto 11vw;
+
+		@media (max-width: 1330px) {
+			margin: auto 55px;
 		}
 	}
 }

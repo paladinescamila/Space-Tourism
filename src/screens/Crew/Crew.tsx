@@ -25,7 +25,7 @@ export default function Crew() {
 				<h5>02</h5>
 				<h5>Meet your crew</h5>
 			</div>
-			<div className='crew__content'>
+			<div className='page__content crew__content'>
 				<div className='crew__content__info'>
 					<h4 className='crew__content__info__role'>
 						{crew[selected].role.replace('-', ' ')}
@@ -39,7 +39,8 @@ export default function Crew() {
 							className={`crew__content__nav__item ${
 								selected === key ? 'crew__content__nav__item--selected' : ''
 							}`}
-							onClick={() => setSelected(key as any)}></li>
+							onClick={() => setSelected(key as any)}
+							key={key}></li>
 					))}
 				</ul>
 				<img

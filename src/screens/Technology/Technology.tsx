@@ -35,14 +35,15 @@ export default function Technology() {
 				<h5>03</h5>
 				<h5>Space launch 101</h5>
 			</div>
-			<div className='technology__content'>
+			<div className='page__content technology__content'>
 				<ul className='technology__content__nav'>
 					{Object.keys(technology).map((key, index) => (
 						<li
 							className={`technology__content__nav__item ${
 								selected === key ? 'technology__content__nav__item--selected' : ''
 							}`}
-							onClick={() => setSelected(key as TechnologyType)}>
+							onClick={() => setSelected(key as TechnologyType)}
+							key={key}>
 							{index + 1}
 						</li>
 					))}
