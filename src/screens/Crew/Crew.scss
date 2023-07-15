@@ -10,6 +10,10 @@
 		justify-content: space-between;
 		height: 400px;
 
+		@media (max-width: $desktop) {
+			height: auto;
+		}
+
 		&__photo {
 			position: absolute;
 			bottom: 0;
@@ -18,9 +22,19 @@
 			@media (max-width: 1330px) {
 				right: 3vw;
 			}
+
+			@media (max-width: $desktop) {
+				left: 0;
+				margin: 0 auto;
+				height: 520px;
+			}
 		}
 
 		&__info {
+			@media (max-width: $desktop) {
+				text-align: center;
+			}
+
 			&__role,
 			&__name {
 				text-transform: uppercase;
@@ -28,25 +42,48 @@
 
 			&__role {
 				font: $heading-4;
-				color: $medium;
+				color: rgba($light, 0.5042);
+
+				@media (max-width: $desktop) {
+					font-size: 24px;
+					color: rgba($light, 0.4994);
+				}
 			}
 
 			&__name {
 				font: $heading-3;
 				color: $light;
 				margin: 15px 0 27px 0;
+
+				@media (max-width: $desktop) {
+					font-size: 40px;
+					margin: 8px 0 16px 0;
+				}
 			}
 
 			&__description {
 				font: $body-text;
 				color: $medium;
 				width: 444px;
+				line-height: 32px;
+
+				@media (max-width: $desktop) {
+					font-size: 16px;
+					width: 100%;
+					line-height: 28px;
+				}
 			}
 		}
 
 		&__nav {
 			display: flex;
 			column-gap: 24px;
+
+			@media (max-width: $desktop) {
+				justify-content: center;
+				margin-top: 40px;
+				column-gap: 16px;
+			}
 
 			&__item {
 				width: 15px;
@@ -56,6 +93,11 @@
 				border-radius: 50%;
 				cursor: pointer;
 				transition: opacity 0.3s ease-in-out;
+
+				@media (max-width: $desktop) {
+					width: 10px;
+					height: 10px;
+				}
 
 				&:hover {
 					opacity: 0.5001;

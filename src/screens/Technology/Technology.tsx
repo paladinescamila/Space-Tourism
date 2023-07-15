@@ -29,6 +29,11 @@ export default function Technology() {
 		},
 	};
 
+	const getPhoto = (key: TechnologyType) => {
+		if (window.innerWidth < 1130) return photos[key].landscape;
+		else return photos[key].portrait;
+	};
+
 	return (
 		<div className='technology page'>
 			<div className='page__header'>
@@ -36,6 +41,10 @@ export default function Technology() {
 				<h5>Space launch 101</h5>
 			</div>
 			<div className='page__content technology__content'>
+				<img
+					className='technology__content__photo'
+					src={getPhoto(selected)}
+					alt={selected.replace('-', ' ').toUpperCase()}></img>
 				<ul className='technology__content__nav'>
 					{Object.keys(technology).map((key, index) => (
 						<li
@@ -55,10 +64,6 @@ export default function Technology() {
 					</h3>
 					<p className='technology__content__info__description'>{technology[selected]}</p>
 				</div>
-				<img
-					className='technology__content__photo'
-					src={photos[selected].portrait}
-					alt={selected.replace('-', ' ').toUpperCase()}></img>
 			</div>
 		</div>
 	);

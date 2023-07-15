@@ -12,11 +12,24 @@
 			'photo nav'
 			'photo info';
 
+		@media (max-width: $desktop) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			gap: 0;
+		}
+
 		&__photo {
 			grid-area: photo;
 			width: 445px;
 			height: 445px;
 			animation: rotate-planet 30s linear infinite;
+
+			@media (max-width: $desktop) {
+				width: 300px;
+				height: 300px;
+			}
 		}
 
 		@keyframes rotate-planet {
@@ -33,6 +46,11 @@
 			column-gap: 35px;
 			grid-area: nav;
 			text-transform: uppercase;
+
+			@media (max-width: $desktop) {
+				margin: 50px 0 30px 0;
+				height: 34px;
+			}
 
 			&__item {
 				font: $nav-text;
@@ -65,6 +83,11 @@
 				color: $light;
 				height: 115px;
 				text-transform: uppercase;
+
+				@media (max-width: $desktop) {
+					font-size: 80px;
+					height: 90px;
+				}
 			}
 
 			&__description {
@@ -72,6 +95,14 @@
 				color: $medium;
 				margin: 14px 0 54px 0;
 				height: 128px;
+				line-height: 32px;
+
+				@media (max-width: $desktop) {
+					margin: 10px 0 50px 0;
+					height: 80px;
+					font-size: 16px;
+					line-height: 28px;
+				}
 			}
 
 			&__other {
