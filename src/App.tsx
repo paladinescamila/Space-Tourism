@@ -4,6 +4,8 @@ import './styles/App.scss';
 
 // Assets
 import Logo from './assets/logo.png';
+import MenuIcon from './assets/menu.svg';
+import CloseIcon from './assets/close.svg';
 
 // Screens
 import Home from './screens/Home/Home';
@@ -16,21 +18,28 @@ function App() {
 	const navigate = useNavigate();
 	const availableRoutes = ['/destination', '/crew', '/technology'];
 
+	const links = [
+		{number: '00', title: 'Home', path: '/'},
+		{number: '01', title: 'Destination', path: '/destination'},
+		{number: '02', title: 'Crew', path: '/crew'},
+		{number: '03', title: 'Technology', path: '/technology'},
+	];
+
+	const [displayMenu, setDisplayMenu] = React.useState(false);
+	const toggleMenu = () => setDisplayMenu(!displayMenu);
+	const closeMenu = () => setDisplayMenu(false);
+
 	const routeToName = (route: string) => {
 		if (availableRoutes.includes(route)) return route.replace('/', '');
 		else return 'home';
 	};
 
 	const selectedStyle = (route: string) => {
-		let className = 'header__links__item';
-
 		if (availableRoutes.includes(navigation.pathname)) {
-			if (navigation.pathname === route) className += ' ' + className + '--selected';
-		} else {
-			if (route === '/') return (className += ' ' + className + '--selected');
-		}
+			if (navigation.pathname === route) return '--selected';
+		} else if (route === '/') return '--selected';
 
-		return className;
+		return '';
 	};
 
 	return (
@@ -38,32 +47,41 @@ function App() {
 			<nav className='header'>
 				<img src={Logo} alt='logo' className='header__logo' onClick={() => navigate('/')} />
 				<ul className='header__links'>
-					<li>
-						<Link to='/' className={selectedStyle('/')}>
-							<p>00</p>
-							<p>Home</p>
-						</Link>
-					</li>
-					<li>
-						<Link to='/destination' className={selectedStyle('/destination')}>
-							<p>01</p>
-							<p>Destination</p>
-						</Link>
-					</li>
-					<li>
-						<Link to='/crew' className={selectedStyle('/crew')}>
-							<p>02</p>
-							<p>Crew</p>
-						</Link>
-					</li>
-					<li>
-						<Link to='/technology' className={selectedStyle('/technology')}>
-							<p>03</p>
-							<p>Technology</p>
-						</Link>
-					</li>
+					{links.map((link, index) => (
+						<li key={index}>
+							<Link
+								to={link.path}
+								className={`header__links__item 
+									header__links__item${selectedStyle(link.path)}`}>
+								<p>{link.number}</p>
+								<p>{link.title}</p>
+							</Link>
+						</li>
+					))}
 				</ul>
+				<img src={MenuIcon} alt='Menu' className='header__menu-icon' onClick={toggleMenu} />
 			</nav>
+			<div className={`mobile-menu mobile-menu--${displayMenu ? 'opened' : 'closed'}`}>
+				<img
+					src={CloseIcon}
+					alt='Close'
+					className='mobile-menu__close-icon'
+					onClick={closeMenu}
+				/>
+				<ul className='mobile-menu__links'>
+					{links.map((link, index) => (
+						<li key={index} onClick={closeMenu}>
+							<Link
+								to={link.path}
+								className={`mobile-menu__links__item
+									mobile-menu__links__item${selectedStyle(link.path)}`}>
+								<p>{link.number}</p>
+								<p>{link.title}</p>
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
 
 			<Routes>
 				<Route path='/' element={<Home />} />

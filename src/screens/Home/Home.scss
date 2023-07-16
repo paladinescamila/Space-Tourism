@@ -18,6 +18,12 @@
 		padding: 100px 0 90px 0;
 	}
 
+	@media (max-width: $desktop) {
+		flex-direction: column;
+		align-items: center;
+		padding: 24px 24px 48px 24px;
+	}
+
 	&__text {
 		width: 444px;
 		display: flex;
@@ -27,6 +33,11 @@
 		@media (max-width: $desktop) {
 			align-items: center;
 			text-align: center;
+		}
+
+		@media (max-width: $tablet) {
+			row-gap: 16px;
+			width: 100%;
 		}
 	}
 
@@ -43,11 +54,19 @@
 		@media (max-width: $desktop) {
 			font-size: 20px;
 		}
+
+		@media (max-width: $tablet) {
+			font-size: 16px;
+		}
 	}
 
 	&__text-2 {
 		font: $heading-1;
 		color: $light;
+
+		@media (max-width: $tablet) {
+			font-size: 80px;
+		}
 	}
 
 	&__text-3 {
@@ -56,6 +75,10 @@
 
 		@media (max-width: $desktop) {
 			font-size: 16px;
+		}
+
+		@media (max-width: $tablet) {
+			font-size: 15px;
 		}
 	}
 
@@ -73,6 +96,12 @@
 		@media (max-width: $desktop) {
 			width: 242px;
 			height: 242px;
+		}
+
+		@media (max-width: $tablet) {
+			width: 150px;
+			height: 150px;
+			font-size: 20px;
 		}
 
 		&::before {

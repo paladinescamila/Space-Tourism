@@ -15,6 +15,10 @@
 			gap: 0;
 		}
 
+		@media (max-width: $tablet) {
+			margin: 32px 0;
+		}
+
 		&__nav {
 			display: flex;
 			flex-direction: column;
@@ -24,6 +28,10 @@
 				flex-direction: row;
 				gap: 16px;
 				margin: 56px 0 44px 0;
+			}
+
+			@media (max-width: $tablet) {
+				margin: 34px 0 26px 0;
 			}
 
 			&__item {
@@ -47,6 +55,12 @@
 					font-size: 24px;
 				}
 
+				@media (max-width: $tablet) {
+					width: 40px;
+					height: 40px;
+					font-size: 16px;
+				}
+
 				&:hover {
 					border-color: $light;
 				}
@@ -67,12 +81,22 @@
 				max-width: 60%;
 			}
 
+			@media (max-width: $tablet) {
+				min-width: 100%;
+				max-width: 100%;
+				padding: 0 24px;
+			}
+
 			&__subtitle {
 				font: $nav-text;
 				color: $medium;
 				text-transform: uppercase;
 				letter-spacing: 2.7px;
 				height: 19px;
+
+				@media (max-width: $tablet) {
+					font-size: 14px;
+				}
 			}
 
 			&__title {
@@ -87,6 +111,12 @@
 					height: 46px;
 					margin: 16px 0;
 				}
+
+				@media (max-width: $tablet) {
+					font-size: 24px;
+					height: 28px;
+					margin: 9px 0 16px 0;
+				}
 			}
 
 			&__description {
@@ -98,6 +128,11 @@
 				@media (max-width: $desktop) {
 					font-size: 16px;
 					height: auto;
+				}
+
+				@media (max-width: $tablet) {
+					font-size: 15px;
+					line-height: 25px;
 				}
 			}
 		}
@@ -122,6 +157,10 @@
 				height: 310px;
 				transform: scale(1);
 				object-fit: cover;
+			}
+
+			@media (max-width: $tablet) {
+				height: 170px;
 			}
 		}
 	}

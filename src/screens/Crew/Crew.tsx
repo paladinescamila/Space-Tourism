@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import info from '../../assets/info.json';
 import './Crew.scss';
 
@@ -10,7 +10,7 @@ import AnoushehAnsari from './assets/anousheh-ansari.png';
 
 export default function Crew() {
 	const {crew} = info;
-	const [selected, setSelected] = useState<CrewType>('douglas-hurley');
+	const [selected, setSelected] = React.useState<CrewType>('douglas-hurley');
 
 	const photos = {
 		'douglas-hurley': DouglasHurley,
@@ -26,13 +26,11 @@ export default function Crew() {
 				<h5>Meet your crew</h5>
 			</div>
 			<div className='page__content crew__content'>
-				<div className='crew__content__info'>
-					<h4 className='crew__content__info__role'>
-						{crew[selected].role.replace('-', ' ')}
-					</h4>
-					<h3 className='crew__content__info__name'>{selected.replace('-', ' ')}</h3>
-					<p className='crew__content__info__description'>{crew[selected].description}</p>
-				</div>
+				<img
+					className='crew__content__photo'
+					src={photos[selected]}
+					alt={selected.replace('-', ' ').toUpperCase()}
+				/>
 				<ul className='crew__content__nav'>
 					{Object.keys(crew).map((key) => (
 						<li
@@ -43,11 +41,13 @@ export default function Crew() {
 							key={key}></li>
 					))}
 				</ul>
-				<img
-					className='crew__content__photo'
-					src={photos[selected]}
-					alt={selected.replace('-', ' ').toUpperCase()}
-				/>
+				<div className='crew__content__info'>
+					<h4 className='crew__content__info__role'>
+						{crew[selected].role.replace('-', ' ')}
+					</h4>
+					<h3 className='crew__content__info__name'>{selected.replace('-', ' ')}</h3>
+					<p className='crew__content__info__description'>{crew[selected].description}</p>
+				</div>
 			</div>
 		</div>
 	);

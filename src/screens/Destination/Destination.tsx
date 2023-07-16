@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import info from '../../assets/info.json';
 import './Destination.scss';
 
@@ -10,7 +10,7 @@ import Titan from './assets/titan.png';
 
 export default function Destination() {
 	const {destination} = info;
-	const [selected, setSelected] = useState<DestinationType>('moon');
+	const [selected, setSelected] = React.useState<DestinationType>('moon');
 
 	const photos = {
 		moon: Moon,

@@ -30,6 +30,11 @@
 				width: 300px;
 				height: 300px;
 			}
+
+			@media (max-width: $tablet) {
+				width: 170px;
+				height: 170px;
+			}
 		}
 
 		@keyframes rotate-planet {
@@ -52,6 +57,12 @@
 				height: 34px;
 			}
 
+			@media (max-width: $tablet) {
+				margin: 26px 0 20px 0;
+				height: 28px;
+				column-gap: 26px;
+			}
+
 			&__item {
 				font: $nav-text;
 				letter-spacing: 2.7px;
@@ -59,6 +70,10 @@
 				border-bottom: 3px solid transparent;
 				cursor: pointer;
 				transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+
+				@media (max-width: $tablet) {
+					font-size: 14px;
+				}
 
 				&:hover {
 					border-bottom-color: rgba($light, 0.5);
@@ -88,6 +103,11 @@
 					font-size: 80px;
 					height: 90px;
 				}
+
+				@media (max-width: $tablet) {
+					font-size: 56px;
+					height: 64px;
+				}
 			}
 
 			&__description {
@@ -103,6 +123,13 @@
 					font-size: 16px;
 					line-height: 28px;
 				}
+
+				@media (max-width: $tablet) {
+					font-size: 15px;
+					height: auto;
+					margin: 1px 0 32px 0;
+					line-height: 25px;
+				}
 			}
 
 			&__other {
@@ -111,6 +138,13 @@
 				border-top: 1px solid #383b4b;
 				padding-top: 28px;
 				text-transform: uppercase;
+
+				@media (max-width: $tablet) {
+					grid-template-columns: 1fr;
+					grid-template-rows: repeat(2, 1fr);
+					padding-top: 32px;
+					gap: 32px;
+				}
 
 				&__distance,
 				&__travel {

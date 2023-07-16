@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import info from '../../assets/info.json';
 import './Technology.scss';
 
@@ -12,7 +12,7 @@ import SpaceportPortrait from './assets/spaceport-portrait.jpg';
 
 export default function Technology() {
 	const {technology} = info;
-	const [selected, setSelected] = useState<TechnologyType>('launch-vehicle');
+	const [selected, setSelected] = React.useState<TechnologyType>('launch-vehicle');
 
 	const photos = {
 		'launch-vehicle': {
