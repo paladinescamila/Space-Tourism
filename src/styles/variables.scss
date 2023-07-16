@@ -15,6 +15,10 @@ $nav-text: 16px 'Barlow Condensed', sans-serif;
 $body-text: 18px 'Barlow', sans-serif;
 
 // Break points
-$desktop: 1130px;
-$tablet: 700px;
-$mobile: 500px;
+$min-desktop: 1130px;
+$min-tablet: 700px;
+$min-mobile: 0;
+
+$is-desktop: 'screen and (max-width: 100vw)';
+$is-tablet: 'screen and (max-width: 1130px)';
+$is-mobile: 'screen and (max-width: 700px)';

@@ -12,7 +12,7 @@
 			'photo nav'
 			'photo info';
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -26,12 +26,12 @@
 			height: 445px;
 			animation: rotate-planet 30s linear infinite;
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				width: 300px;
 				height: 300px;
 			}
 
-			@media (max-width: $tablet) {
+			@media #{$is-mobile} {
 				width: 170px;
 				height: 170px;
 			}
@@ -52,12 +52,12 @@
 			grid-area: nav;
 			text-transform: uppercase;
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				margin: 50px 0 30px 0;
 				height: 34px;
 			}
 
-			@media (max-width: $tablet) {
+			@media #{$is-mobile} {
 				margin: 26px 0 20px 0;
 				height: 28px;
 				column-gap: 26px;
@@ -71,7 +71,7 @@
 				cursor: pointer;
 				transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 14px;
 				}
 
@@ -99,12 +99,12 @@
 				height: 115px;
 				text-transform: uppercase;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					font-size: 80px;
 					height: 90px;
 				}
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 56px;
 					height: 64px;
 				}
@@ -117,14 +117,14 @@
 				height: 128px;
 				line-height: 32px;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					margin: 10px 0 50px 0;
 					height: 80px;
 					font-size: 16px;
 					line-height: 28px;
 				}
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 15px;
 					height: auto;
 					margin: 1px 0 32px 0;
@@ -139,7 +139,7 @@
 				padding-top: 28px;
 				text-transform: uppercase;
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					grid-template-columns: 1fr;
 					grid-template-rows: repeat(2, 1fr);
 					padding-top: 32px;

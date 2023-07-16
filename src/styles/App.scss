@@ -15,7 +15,7 @@ body,
 	background-size: cover;
 }
 
-@media (min-width: 0) {
+@media (min-width: $min-mobile) {
 	@each $page in home, destination, crew, technology {
 		.#{$page}-bg {
 			background-image: url('../assets/background-#{$page}-mobile.jpg');
@@ -23,7 +23,7 @@ body,
 	}
 }
 
-@media (min-width: $tablet) {
+@media (min-width: $min-tablet) {
 	@each $page in home, destination, crew, technology {
 		.#{$page}-bg {
 			background-image: url('../assets/background-#{$page}-tablet.jpg');
@@ -31,7 +31,7 @@ body,
 	}
 }
 
-@media (min-width: $desktop) {
+@media (min-width: $min-desktop) {
 	@each $page in home, destination, crew, technology {
 		.#{$page}-bg {
 			background-image: url('../assets/background-#{$page}-desktop.jpg');
@@ -47,11 +47,11 @@ body,
 	padding: 40px 0 0 55px;
 	height: calc(96px + 40px);
 
-	@media (max-width: $desktop) {
+	@media #{$is-tablet} {
 		padding: 0 0 0 40px;
 	}
 
-	@media (max-width: $tablet) {
+	@media #{$is-mobile} {
 		height: auto;
 		padding: 24px;
 	}
@@ -61,7 +61,7 @@ body,
 		height: 48px;
 		cursor: pointer;
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			width: 40px;
 			height: 40px;
 		}
@@ -79,14 +79,14 @@ body,
 		background-color: rgba($light, 0.04);
 		backdrop-filter: blur(81.55px);
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			width: auto;
 			padding-right: 46px;
 			column-gap: 37px;
 			padding-left: 48px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			display: none;
 		}
 
@@ -102,14 +102,14 @@ body,
 			transition: border-bottom-color 0.3s ease-in-out;
 			letter-spacing: 2.7px;
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				font: $subheading-2;
 			}
 
 			p:first-of-type {
 				font-weight: bold;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					display: none;
 				}
 			}
@@ -133,7 +133,7 @@ body,
 			top: calc(50% - 1px / 2);
 			right: 800px;
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				display: none;
 			}
 		}
@@ -143,7 +143,7 @@ body,
 		display: none;
 		cursor: pointer;
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			display: block;
 		}
 	}
@@ -220,7 +220,7 @@ body,
 	display: flex;
 	flex-direction: column;
 
-	@media (max-width: $desktop) {
+	@media #{$is-tablet} {
 		height: calc(100vh - 96px);
 	}
 
@@ -237,12 +237,12 @@ body,
 			margin: 76px 0 0 55px;
 		}
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			margin: 40px 0 0 40px;
 			font-size: 20px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			margin: 0;
 			font-size: 16px;
 			justify-content: center;
@@ -265,11 +265,11 @@ body,
 			margin: auto 55px;
 		}
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			margin: 60px 100px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			margin: 32px 24px;
 		}
 	}

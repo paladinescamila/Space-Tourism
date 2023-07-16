@@ -10,12 +10,12 @@
 		justify-content: space-between;
 		height: 400px;
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			height: auto;
 			row-gap: 40px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			flex-direction: column;
 			row-gap: 0;
 		}
@@ -29,20 +29,20 @@
 				right: 3vw;
 			}
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				left: 0;
 				margin: 0 auto;
 				height: 520px;
 			}
 
-			@media (max-width: $tablet) {
+			@media #{$is-mobile} {
 				position: relative;
 				height: 223px;
 			}
 		}
 
 		&__info {
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				text-align: center;
 			}
 
@@ -55,12 +55,12 @@
 				font: $heading-4;
 				color: rgba($light, 0.5042);
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					font-size: 24px;
 					color: rgba($light, 0.4994);
 				}
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 16px;
 				}
 			}
@@ -70,12 +70,12 @@
 				color: $light;
 				margin: 15px 0 27px 0;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					font-size: 40px;
 					margin: 8px 0 16px 0;
 				}
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 24px;
 				}
 			}
@@ -86,13 +86,13 @@
 				width: 444px;
 				line-height: 32px;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					font-size: 16px;
 					width: 100%;
 					line-height: 28px;
 				}
 
-				@media (max-width: $tablet) {
+				@media #{$is-mobile} {
 					font-size: 15px;
 					line-height: 25px;
 				}
@@ -103,12 +103,12 @@
 			display: flex;
 			column-gap: 24px;
 
-			@media (max-width: $desktop) {
+			@media #{$is-tablet} {
 				justify-content: center;
 				column-gap: 16px;
 			}
 
-			@media (max-width: $tablet) {
+			@media #{$is-mobile} {
 				border-top: 1px solid #383b4b;
 				padding: 32px 0;
 			}
@@ -122,7 +122,7 @@
 				cursor: pointer;
 				transition: opacity 0.3s ease-in-out;
 
-				@media (max-width: $desktop) {
+				@media #{$is-tablet} {
 					width: 10px;
 					height: 10px;
 				}

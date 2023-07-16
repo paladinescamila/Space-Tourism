@@ -12,13 +12,13 @@
 		padding: 130px calc(55px * 2);
 	}
 
-	@media (max-width: $desktop) {
+	@media #{$is-tablet} {
 		flex-direction: column;
 		align-items: center;
 		padding: 100px 0 90px 0;
 	}
 
-	@media (max-width: $desktop) {
+	@media #{$is-tablet} {
 		flex-direction: column;
 		align-items: center;
 		padding: 24px 24px 48px 24px;
@@ -30,12 +30,12 @@
 		flex-direction: column;
 		row-gap: 24px;
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			align-items: center;
 			text-align: center;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			row-gap: 16px;
 			width: 100%;
 		}
@@ -51,11 +51,11 @@
 		font: $heading-5;
 		letter-spacing: 4.72px;
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			font-size: 20px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			font-size: 16px;
 		}
 	}
@@ -64,7 +64,7 @@
 		font: $heading-1;
 		color: $light;
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			font-size: 80px;
 		}
 	}
@@ -73,11 +73,11 @@
 		font: $body-text;
 		line-height: 32px;
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			font-size: 16px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			font-size: 15px;
 		}
 	}
@@ -93,12 +93,12 @@
 		cursor: pointer;
 		position: relative;
 
-		@media (max-width: $desktop) {
+		@media #{$is-tablet} {
 			width: 242px;
 			height: 242px;
 		}
 
-		@media (max-width: $tablet) {
+		@media #{$is-mobile} {
 			width: 150px;
 			height: 150px;
 			font-size: 20px;
