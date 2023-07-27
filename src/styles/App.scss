@@ -5,12 +5,14 @@ html,
 body,
 #root,
 .App {
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 	background-color: $dark;
 }
 
 .App {
+	min-width: 100vw;
+	min-height: 100vh;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -184,10 +186,10 @@ body,
 		flex-direction: column;
 		row-gap: 20px;
 		width: 100%;
-		padding-left: 30px;
 
 		&__item {
 			display: flex;
+			align-items: center;
 			column-gap: 11px;
 			color: $light;
 			font: $nav-text;
@@ -196,6 +198,7 @@ body,
 			border-right: 4px solid transparent;
 			transition: border-right-color 0.3s ease-in-out;
 			letter-spacing: 2.7px;
+			padding-left: 30px;
 			height: 30px;
 
 			p:first-of-type {
@@ -216,12 +219,12 @@ body,
 
 .page {
 	width: 100%;
-	height: calc(100vh - 136px);
+	min-height: calc(100vh - 136px);
 	display: flex;
 	flex-direction: column;
 
-	@media #{$is-tablet} {
-		height: calc(100vh - 96px);
+	@media #{$is-mobile} {
+		min-height: calc(100vh - 88px);
 	}
 
 	&__header {

@@ -13,11 +13,13 @@
 		@media #{$is-tablet} {
 			height: auto;
 			row-gap: 40px;
+			margin-bottom: 0;
 		}
 
 		@media #{$is-mobile} {
 			flex-direction: column;
 			row-gap: 0;
+			margin-bottom: 32px;
 		}
 
 		&__photo {
@@ -30,13 +32,12 @@
 			}
 
 			@media #{$is-tablet} {
-				left: 0;
+				position: relative;
 				margin: 0 auto;
 				height: 520px;
 			}
 
 			@media #{$is-mobile} {
-				position: relative;
 				height: 223px;
 			}
 		}

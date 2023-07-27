@@ -5,6 +5,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
+	gap: 50px;
 	color: $medium;
 	padding: 130px 165px;
 
@@ -83,8 +84,8 @@
 	}
 
 	&__button {
-		width: 274px;
-		height: 274px;
+		min-width: 274px;
+		min-height: 274px;
 		border: none;
 		background-color: $light;
 		border-radius: 50%;
@@ -94,13 +95,13 @@
 		position: relative;
 
 		@media #{$is-tablet} {
-			width: 242px;
-			height: 242px;
+			min-width: 242px;
+			min-height: 242px;
 		}
 
 		@media #{$is-mobile} {
-			width: 150px;
-			height: 150px;
+			min-width: 150px;
+			min-height: 150px;
 			font-size: 20px;
 		}
 
@@ -109,12 +110,26 @@
 			position: absolute;
 			top: calc((274px / 2) - (450px / 2));
 			left: calc((274px / 2) - (450px / 2));
-			width: 450px;
-			height: 450px;
+			min-width: 450px;
+			min-height: 450px;
 			border-radius: 50%;
 			background-color: rgba($light, 0.1036);
 			transform: scale(0);
 			transition: transform 0.3s ease-in-out;
+
+			@media #{$is-tablet} {
+				top: calc((242px / 2) - (400px / 2));
+				left: calc((242px / 2) - (400px / 2));
+				min-width: 400px;
+				min-height: 400px;
+			}
+
+			@media #{$is-mobile} {
+				top: calc((150px / 2) - (300px / 2));
+				left: calc((150px / 2) - (300px / 2));
+				min-width: 300px;
+				min-height: 300px;
+			}
 		}
 
 		&:hover::before {
