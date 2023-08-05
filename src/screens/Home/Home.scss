@@ -118,17 +118,17 @@
 			transition: transform 0.3s ease-in-out;
 
 			@media #{$is-tablet} {
-				top: calc((242px / 2) - (400px / 2));
-				left: calc((242px / 2) - (400px / 2));
-				min-width: 400px;
-				min-height: 400px;
+				top: calc((242px / 2) - (350px / 2));
+				left: calc((242px / 2) - (350px / 2));
+				min-width: 350px;
+				min-height: 350px;
 			}
 
 			@media #{$is-mobile} {
-				top: calc((150px / 2) - (300px / 2));
-				left: calc((150px / 2) - (300px / 2));
-				min-width: 300px;
-				min-height: 300px;
+				top: calc((150px / 2) - (250px / 2));
+				left: calc((150px / 2) - (250px / 2));
+				min-width: 250px;
+				min-height: 250px;
 			}
 		}
 

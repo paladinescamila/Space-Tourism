@@ -61,13 +61,8 @@ function App() {
 				</ul>
 				<img src={MenuIcon} alt='Menu' className='header__menu-icon' onClick={toggleMenu} />
 			</nav>
-			<div className={`mobile-menu mobile-menu--${displayMenu ? 'opened' : 'closed'}`}>
-				<img
-					src={CloseIcon}
-					alt='Close'
-					className='mobile-menu__close-icon'
-					onClick={closeMenu}
-				/>
+			<nav className={`mobile-menu mobile-menu--${displayMenu ? 'opened' : 'closed'}`}>
+				<img src={CloseIcon} alt='Close' className='mobile-menu__close-icon' onClick={closeMenu} />
 				<ul className='mobile-menu__links'>
 					{links.map((link, index) => (
 						<li key={index} onClick={closeMenu}>
@@ -81,7 +76,7 @@ function App() {
 						</li>
 					))}
 				</ul>
-			</div>
+			</nav>
 
 			<Routes>
 				<Route path='/' element={<Home />} />
