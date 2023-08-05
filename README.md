@@ -6,8 +6,8 @@ This is a solution to the [Space tourism multi-page website challenge on Fronten
 
 ## Links
 
--   [Solution]()
--   [Live Site](https://stmw-frontend-mentor.netlify.app/)
+-   [Solution](https://www.frontendmentor.io/solutions/space-tourism-multipage-website-S3RicP_mv7)
+-   [Live Site](https://stmw-frontend-mentor.netlify.app)
 
 ## Built with
 
@@ -17,6 +17,6 @@ This is a solution to the [Space tourism multi-page website challenge on Fronten
 
 ## Author
 
--   Website - [camilapaladines.netlify.app](https://camilapaladines.netlify.app/)
+-   Website - [camilapaladines.netlify.app](https://camilapaladines.netlify.app)
 -   Frontend Mentor - [@paladinescamila](https://www.frontendmentor.io/profile/paladinescamila)
 -   LinkedIn - [@paladinescamila](https://co.linkedin.com/in/paladinescamila)
