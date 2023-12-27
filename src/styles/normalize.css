@@ -354,7 +354,7 @@ template {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-   outline: none;
+	outline: none;
 }
 
 h1,
@@ -377,4 +377,8 @@ ul {
 
 a {
 	text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+	width: 0;
 }
